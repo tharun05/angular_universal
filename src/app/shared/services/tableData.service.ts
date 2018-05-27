@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { PeriodicElement } from '../../apex/entities/table.interface'
+import { TableDataInterface } from '../../apex/entities/table.interface'
 // import { User } from '../../apex/entities/tableData.model';
 
 @Injectable()
 export class TableDataService {
-  user: PeriodicElement[] = [
+  user: TableDataInterface[] = [
     {
       id: 172798,
       name: 'Scissors',

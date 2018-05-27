@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, Input, SimpleChanges } from '@angular/cor
 import { User } from '../../apex/entities/tableData.model';
 import { TableDataService } from '../../shared/services/tableData.service';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { PeriodicElement } from '../../apex/entities/table.interface';
+import { TableDataInterface } from '../../apex/entities/table.interface';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
   status:boolean;
   ELEMENT_DATA;
   userList: any;
-  dataSource = new MatTableDataSource<PeriodicElement>(this.userList);
+  dataSource = new MatTableDataSource<TableDataInterface>(this.userList);
   constructor(private tableDataService: TableDataService) {
 
   }
@@ -40,7 +40,7 @@ export class TableComponent implements OnInit {
       let curVal = change.currentValue;
       this.userList = curVal;
       console.log(this.userList)
-      this.dataSource = new MatTableDataSource<PeriodicElement>(this.userList)
+      this.dataSource = new MatTableDataSource<TableDataInterface>(this.userList)
     }
   }
   chekd(e,i?:number) {

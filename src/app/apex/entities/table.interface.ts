@@ -1,4 +1,4 @@
-export interface PeriodicElement {
+export interface TableDataInterface {
     id:number
     name: string;
     type: string;

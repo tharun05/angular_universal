@@ -18,11 +18,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 
 import {
-  MatFormFieldModule, MatTableModule,MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatRadioModule, MatSelectModule,
+  MatFormFieldModule, MatTableModule, MatInputModule, MatSelectModule,
   MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
-  MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule, MatExpansionModule,
-  MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, MatAutocompleteModule,
-  MatTooltipModule, MatSnackBarModule,
+  MatGridListModule,MatIconModule, MatCardModule, MatTabsModule,
+  MatButtonModule,
 } from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './apex/menu/menu.component';
@@ -38,11 +37,7 @@ import {TableDataService} from './shared/services/tableData.service'
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatInputModule,
-    MatRadioModule,
     MatSelectModule,
     MatSlideToggleModule,
     MatMenuModule,
@@ -51,17 +46,9 @@ import {TableDataService} from './shared/services/tableData.service'
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatStepperModule,
     MatTabsModule,
-    MatExpansionModule,
     MatButtonModule,
-    MatChipsModule,
     MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatAutocompleteModule,
-    MatTooltipModule,
-    MatSnackBarModule,
     FlexLayoutModule,
     MatTableModule,
     MatPaginatorModule,
