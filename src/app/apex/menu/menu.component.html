@@ -1,0 +1,18 @@
+<mat-nav-list style="padding-bottom: 60px;">
+  <!-- <mat-list-item style="height:150px;width:100%;text-align:center;padding:0px">
+          <a class="nav-links"><img src="../assets/images/mani.jpg" style="width:60%;border-radius:50%;text-align:center;padding:0px;margin-right:17%"></a>
+  </mat-list-item> -->
+  <!-- <mat-list-item style="background-color: #44b5b5;height:50px;width:100%">
+      
+  </mat-list-item> -->
+  <mat-list-item *ngFor="let item of menuList"  (click)="navigate(item)" [ngClass]="{ 'activatedObject': activeMenuObject == item.name }" routerLink="{{item.link}}">
+      <!-- <mat-icon class="md-18" md-list-icon svgIcon="core:{{item.icon}}"  
+          class="menu-icon">
+      </mat-icon> -->
+      <a class="nav-links"> {{item.name}} </a>
+  </mat-list-item>
+  <mat-list-item (click)="logout()">
+      <!-- <mat-icon class="md-18" class="menu-icon">exit_to_app</mat-icon> -->
+      <a class="nav-links"> Signout </a>
+  </mat-list-item>
+</mat-nav-list>

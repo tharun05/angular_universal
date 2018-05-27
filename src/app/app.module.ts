@@ -1,32 +1,83 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent }         from './app.component';
+import { AppComponent } from './app.component';
 
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
+import {
+  MatFormFieldModule, MatTableModule,MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatRadioModule, MatSelectModule,
+  MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
+  MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule, MatExpansionModule,
+  MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, MatAutocompleteModule,
+  MatTooltipModule, MatSnackBarModule,
+} from '@angular/material';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './apex/menu/menu.component';
+import { SubheaderMenuComponent } from './apex/subheader-menu/subheader-menu.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TableComponent } from './components/table/table.component';
+import {TableDataService} from './shared/services/tableData.service'
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    BrowserModule.withServerTransition({ appId: 'tech-tree' }),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-   
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatAutocompleteModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+    FlexLayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   declarations: [
     AppComponent,
+    HeaderComponent,
+    MenuComponent,
+    SubheaderMenuComponent,
+    DashboardComponent,
+    TableComponent,
 
   ],
-  providers: [ ],
-  bootstrap: [ AppComponent ]
+  providers: [TableDataService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(
