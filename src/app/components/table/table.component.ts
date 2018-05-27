@@ -10,63 +10,49 @@ import { PeriodicElement } from '../../apex/entities/table.interface';
 })
 export class TableComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'type', 'status','date'];
+  displayedColumns = ['id', 'name', 'type', 'status', 'date', 'action'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @Input() users: any;
+  @Input() checked: boolean
+  status:boolean;
   ELEMENT_DATA;
   userList: any;
   dataSource = new MatTableDataSource<PeriodicElement>(this.userList);
   constructor(private tableDataService: TableDataService) {
-    console.log(this.dataSource)
 
   }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.userList = this.users;
-    this.dataSource = new MatTableDataSource<PeriodicElement>(this.userList)
+    // this.userList.status = this.toggleStatus;
+    // console.log(this.toggleStatus)
+    // this.dataSource = new MatTableDataSource<PeriodicElement>(this.userList)
 
     console.log(this.userList)
+    for(var item of this.userList){
+      this.status = item.action;
+    }
   }
   ngOnChanges(changes: SimpleChanges) {
     for (let propName in changes) {
       let change = changes[propName];
       let curVal = change.currentValue;
-      let prevVal = JSON.stringify(change.previousValue);
       this.userList = curVal;
+      console.log(this.userList)
       this.dataSource = new MatTableDataSource<PeriodicElement>(this.userList)
-      console.log(prevVal);
     }
   }
+  chekd(e,i?:number) {
 
+    if(e.checked === true){
+      this.userList[i].status = "Active"
+    }
+    else if(e.checked === false){
+      this.userList[i].status = "Inactive"
+      
+    }
+    console.log(e.checked)
+  }
 
 }
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   weight: number;
-//   symbol: string;
-// }
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-//   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-//   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-//   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-//   {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-//   {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-//   {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-//   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-//   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-//   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-//   {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-//   {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-//   {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-//   {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-//   {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-//   {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-//   {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-//   {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-//   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-//   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-
-// ];

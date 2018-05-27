@@ -3,9 +3,7 @@
           <form fxLayout="row wrap" fxLayoutAlign="center center">
             <mat-card fxFlex="100" style="padding:5px;">
               <mat-card-header>
-                <h4 class="padding text-center">Search User</h4>
-               
-                
+                <h4 class="padding text-center">Add User</h4>
               </mat-card-header>
               <mat-card-content>
                 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
@@ -36,11 +34,11 @@
                 <div fxLayout="row" fxLayoutAlign="end center">
                   <div class="padding">
                     <button fxFlex="100" style="width:100px;height:40px;color:#fff;background-color:#373F4C;border-style:none;"
-                   (click)="addUser(user)" >ADD USER</button>
+                   (click)="addUser(user)">ADD USER</button>
                   </div>
                   <div class="padding">
                       <button fxFlex="100" style="width:100px;height:40px;color:#fff;background-color:#373F4C;border-style:none;"
-                      >RESET USER</button>
+                      (click)="reserUser()">RESET USER</button>
                     </div>
                 </div>
               </mat-card-content>

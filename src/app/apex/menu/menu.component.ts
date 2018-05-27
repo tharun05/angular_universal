@@ -27,12 +27,6 @@ export class MenuComponent implements OnInit {
         "link": "/dashboard",
         "icon": "admin_dashboard"
        },
-      // {
-      //   "id": 'STUDENT',
-      //   "name": "All Student List",
-      //   "link": "/student-list",
-      //   "icon": "user_management"
-      // },
       {
         "id": 'PROFILES',
         "name": "Profile",
@@ -64,6 +58,5 @@ export class MenuComponent implements OnInit {
   }
   navigate(item) {
     this.activeMenuObject = item.name;
-    // Storage.setSessionItem('activeMenuObject', item.name);
   }
 }

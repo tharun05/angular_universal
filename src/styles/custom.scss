@@ -12,7 +12,9 @@ a {
     font-weight: bold;
     border-style: none;
 }
-
+a{
+    outline: none;    
+}
 .pointer {
     cursor: pointer;
 }
@@ -201,7 +203,9 @@ infinite-list {
             color: #ffffff;
         }
     }
- 
+ .activatedObject {
+     border-left: 2px solid #fff;
+ }
 .menu-icon{
     color: #b3bfd1;
 }
